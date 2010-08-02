@@ -77,24 +77,20 @@ foreach (array('ad', 'soyad') as $alan) {
 
 F3::input($alan='tc',
 	function($value) use($alan) {
-		// TODO Bu kısmı test etmedim --roktas
-		F3::sql('SELECT * from kul ','DB');
-		foreach (F3::get('DB.result') as $row) {
-			if ($row['tc'] == $value) {
-				F3::set('message', $value. 'Bu kayıt daha önceden eklendi');
-				return;
-			}
-		}
-
 		$ne = "Tc No";
 		if ($hata = denetle($value, array(
 			'dolu'    => array(true, "$ne boş bırakılamaz"),
 			'esit'    => array(11,   "$ne 11 haneli olmalıdır"),
 			'tamsayi' => array(true, "$ne sadece rakam içermeli"),
 			'ozel'    => array(function($value) { return ! is_tc($value); },
-					'Geçerli bir TC no değil'),
+					"Geçerli bir $ne değil"),
 		))) { F3::set('message', $hata); return; }
-		F3::set("REQUEST.$alan", ucfirst($value));
+
+		$kul = new Axon('kul');
+		if ($kul->found("tc=$value")) {
+			F3::set('message', "$value $ne daha önceden eklendi");
+			return;
+		}
 	}
 );
 
