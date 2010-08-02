@@ -77,8 +77,6 @@ foreach (array('ad', 'soyad') as $alan) {
 
 F3::input($alan='tc',
 	function($value) use($alan) {
-		$ne = ucfirst($alan);
-
 		// TODO Bu kısmı test etmedim --roktas
 		F3::sql('SELECT * from kul ','DB');
 		foreach (F3::get('DB.result') as $row) {
@@ -88,10 +86,11 @@ F3::input($alan='tc',
 			}
 		}
 
+		$ne = "Tc No";
 		if ($hata = denetle($value, array(
-			'dolu'    => array(true, 'TC No boş bırakılamaz'),
-			'esit'    => array(11,   'TC No 11 haneli olmalıdır'),
-			'tamsayi' => array(true, 'Tc no sadece rakam içermeli'),
+			'dolu'    => array(true, "$ne boş bırakılamaz"),
+			'esit'    => array(11,   "$ne 11 haneli olmalıdır"),
+			'tamsayi' => array(true, "$ne sadece rakam içermeli"),
 			'ozel'    => array(function($value) { return ! is_tc($value); },
 					'Geçerli bir TC no değil'),
 		))) { F3::set('message', $hata); return; }
