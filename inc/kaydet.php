@@ -47,6 +47,9 @@ if (! F3::exists('message')) {
 	$kul->copyFrom('REQUEST');
 	$kul->tarih = date("h:i / d-m-Y");
 
+	// ilk kurulum sırasında bu resim dizinini oluştur
+	// php prosesi yazacağına göre izinleri doğru ayarla
+	// 	chgrp -R www-data resim && chmod g+w resim
 	$resim = 'resim/' . $kul->tc . '.jpg';
 
 	// here we go!
