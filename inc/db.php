@@ -13,7 +13,7 @@ function is_table_exists($table, $db=NULL) {
 	);
 }
 
-if (is_table_exists('kul')) {
+if (! is_table_exists('kul')) {
 	// FIXME init.sql'deki tabloyu buraya aktar
 	F3::sql(
 		array(
