@@ -89,20 +89,8 @@ function iller() {
 }
 
 F3::clear('SESSION.captcha');
+F3::call(':db');
 F3::set('iller', iller());
-
-// FIXME init.sql'deki tabloyu buraya aktar
-F3::sql(
-	array(
-		'CREATE TABLE IF NOT EXISTS kul ('.
-			'tc INT (11) UNSIGNED NOT NULL,'.
-			'ad CHAR (15),'.
-			'soyad CHAR (20),'.
-			'PRIMARY KEY(tc)'.
-		');' 
-	)
-);
-
 F3::call('render');
 
 ?>
