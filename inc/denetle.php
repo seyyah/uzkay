@@ -67,7 +67,7 @@ foreach (array('ad', 'soyad') as $alan) {
 			$ne = ucfirst($alan);
 			if ($hata = denetle($value, array(
 				'dolu'    => array(true, "$ne boş bırakılamaz"),
-				'enaz'    => array(1,    "$ne çok kısa"),
+				'enaz'    => array(2,    "$ne çok kısa"),
 				'enfazla' => array(127,  "$ne çok uzun"),
 			))) { F3::set('message', $hata); return; }
 			F3::set("REQUEST.$alan", ucfirst($value));
