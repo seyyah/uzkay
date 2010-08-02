@@ -62,8 +62,7 @@ if (! F3::exists('error')) {
 		$kul->save();
 		// TODO: burada bir özet verelim
 		F3::set('message', 'Kaydınız başarıyla yapıldı.');
-		F3::call(':ok');
-		return;
+		return F3::call(':ok');
 	}
 	// hatalı bir resim kaydı varsa çöp bırakmamaya çalış
 	// FIXME: bu mantık üzerinde biraz daha çalış
