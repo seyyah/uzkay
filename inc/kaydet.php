@@ -19,33 +19,33 @@ function yukle($hedef=NULL, $alan='file') {
 	if (is_uploaded_file($yuklenen)) {
 		// boyutu sınırla, değeri öylesine seçtim
 		if (filesize($yuklenen) > 350000) {
-			F3::set('message', 'Resim çok büyük');
+			F3::set('error', 'Resim çok büyük');
 		}
 		// şimdilik sadece JPEG, dosya tipini içine bakarak tespit ediyoruz
 		else if (exif_imagetype($yuklenen) != IMAGETYPE_JPEG) {
-			F3::set('message', 'Resim JPEG değil');
+			F3::set('error', 'Resim JPEG değil');
 		}
 		// dosyanın üzerine yazmayalım, ekstra güvenlik
 		else if (file_exists($hedef)) {
-			F3::set('message', 'Resim zaten kaydedilmiş');
+			F3::set('error', 'Resim zaten kaydedilmiş');
 		}
 		// tamamdır, kalıcı kayıt yapalım
 		else if (!move_uploaded_file($yuklenen, $hedef)) {
-			F3::set('message', 'Dosya yükleme hatası');
+			F3::set('error', 'Dosya yükleme hatası');
 		}
 		// yok başka bir ihtimal!
 	}
 	else {
 		// bu aslında bir atak işareti
-		F3::set('message', 'Dosya geçerli bir yükleme değil');
+		F3::set('error', 'Dosya geçerli bir yükleme değil');
 	}
 
 	return false;
 }
 
 // denetleme sırasında hata oluşmamışsa kayıt yapacağız
-// hata olmadığını nereden anlıyoruz?  "message"a bakarak
-if (! F3::exists('message')) {
+// hata olmadığını nereden anlıyoruz?  "error"a bakarak
+if (! F3::exists('error')) {
 	$kul = new Axon('kul');
 	$kul->copyFrom('REQUEST');
 	$kul->tarih = date("h:i / d-m-Y");
@@ -57,14 +57,13 @@ if (! F3::exists('message')) {
 	$resim = F3::get('uploaddir') . $kul->tc . '.jpg';
 	yukle($resim);
 
-	if (! F3::exists('message')) {
+	if (! F3::exists('error')) {
 		// here we go!
 		$kul->save();
 		// TODO: burada bir özet verelim
-		echo "Kaydınız başarıyla yapıldı.";
+		F3::set('error', 'Kaydınız başarıyla yapıldı.');
 		F3::reroute("$F3/");
 		// reroute'tan dolayı ön sayfaya dönüyoruz
-		// ama hata yok
 	}
 	// hatalı bir resim kaydı varsa çöp bırakmamaya çalış
 	// FIXME: bu mantık üzerinde biraz daha çalış
@@ -75,7 +74,7 @@ if (! F3::exists('message')) {
 }
 
 // hata var, dön başa ve tekrar kayıt al.
-// message alanı dolu ve layout.htm'de görüntülenecek
+// error alanı dolu ve layout.htm'de görüntülenecek
 F3::call(':goster');
 
 ?>

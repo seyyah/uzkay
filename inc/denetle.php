@@ -45,11 +45,11 @@ function denetle($verilen, $tarif) {
 }
 
 // temiz bir sayfa açalım!
-F3::clear('message');
+F3::clear('error');
 
 // captcha'sız maça çıkmayız, sağlam gidelim
 if (! F3::exists('SESSION.captcha')) {
-	F3::set('message', 'Oturum Güvenlik Kodu eksik');
+	F3::set('error', 'Oturum Güvenlik Kodu eksik');
 	return;
 }
 
@@ -62,7 +62,7 @@ F3::input($alan='captcha',
 			'dolu'   => array(true,                 "$ne boş bırakılamaz"),
 			'enaz'   => array(strlen($captcha),     "$ne çok kısa"),
 			'degeri' => array(strtolower($captcha), "Yanlış $ne"),
-		))) { F3::set('message', $hata); return; }
+		))) { F3::set('error', $hata); return; }
 	}
 );
 
@@ -75,7 +75,7 @@ foreach (array('ad', 'soyad') as $alan) {
 				'dolu'    => array(true, "$ne boş bırakılamaz"),
 				'enaz'    => array(2,    "$ne çok kısa"),
 				'enfazla' => array(127,  "$ne çok uzun"),
-			))) { F3::set('message', $hata); return; }
+			))) { F3::set('error', $hata); return; }
 			F3::set("REQUEST.$alan", ucfirst($value));
 		}
 	);
@@ -91,11 +91,11 @@ F3::input($alan='tc',
 			'tamsayi' => array(true, "$ne sadece rakam içermeli"),
 			'ozel'    => array(function($value) { return ! is_tc($value); },
 					"Geçerli bir $ne değil"),
-		))) { F3::set('message', $hata); return; }
+		))) { F3::set('error', $hata); return; }
 
 		$kul = new Axon('kul');
 		if ($kul->found("tc=$value")) {
-			F3::set('message', "$ne $value daha önceden eklendi");
+			F3::set('error', "$ne $value daha önceden eklendi");
 			return;
 		}
 	}
