@@ -88,7 +88,7 @@ F3::input($alan='tc',
 
 		$kul = new Axon('kul');
 		if ($kul->found("tc=$value")) {
-			F3::set('message', "$value $ne daha önceden eklendi");
+			F3::set('message', "$ne $value daha önceden eklendi");
 			return;
 		}
 	}

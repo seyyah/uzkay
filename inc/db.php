@@ -1,5 +1,6 @@
 <?php
 
+// FIXME istediğim gibi çalışmıyor, sonra bakacağım
 function is_table_exists($table, $db=NULL) {
 	if (is_null($db))
 		$db = F3::get('DB.name');
@@ -13,19 +14,18 @@ function is_table_exists($table, $db=NULL) {
 	);
 }
 
-if (! is_table_exists('kul')) {
-	// FIXME init.sql'deki tabloyu buraya aktar
-	F3::sql(
-		array(
-			'CREATE TABLE kul ('.
-				'tc INT (11) UNSIGNED NOT NULL,'.
-				'ad CHAR (15),'.
-				'soyad CHAR (20),'.
-				'tarih varchar(100),'.
-				'PRIMARY KEY(tc)'.
-			');' 
-		)
-	);
-}
+// FIXME init.sql'deki tabloyu buraya aktar
+F3::sql(
+	array(
+		'CREATE TABLE IF NOT EXISTS kul ('.
+			'id INT(11) NOT NULL auto_increment,'.
+			'tc VARCHAR(11) NOT NULL,'.
+			'ad CHAR (15),'.
+			'soyad CHAR (20),'.
+			'tarih varchar(100),'.
+			'PRIMARY KEY(id)'.
+		');' 
+	)
+);
 
 ?>
