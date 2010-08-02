@@ -3,8 +3,9 @@
 // denetleme yapalım
 F3::call(':denetle');
 
-function yukle($hedef=NULL) {
-	$yuklenen = F3::get('FILES.file.tmp_name');
+// FIXME bunu biraz daha genelleştir, PNG falan yönetsin
+function yukle($hedef=NULL, $alan='file') {
+	$yuklenen = F3::get("FILES.$file.tmp_name");
 
 	// hedef ve yüklenen dosyanın boş olmasına izin veriyoruz
 	// herhangi biri boşsa mesele yok, çağırana dön
@@ -47,15 +48,15 @@ if (! F3::exists('message')) {
 	$kul->copyFrom('REQUEST');
 	$kul->tarih = date("h:i / d-m-Y");
 
-	// ilk kurulum sırasında bu resim dizinini oluştur
+	// artık elimizde temiz bir tc no var, resmi kaydedelim
+	// ilk kurulum sırasında bu <uploaddir> dizinini oluştur
 	// php prosesi yazacağına göre izinleri doğru ayarla
-	// 	chgrp -R www-data resim && chmod g+w resim
-	$resim = 'resim/' . $kul->tc . '.jpg';
-
-	// here we go!
+	// 	chgrp -R www-data <uploaddir> && chmod g+w <uploaddir>
+	$resim = F3::get('uploaddir') . $kul->tc . '.jpg';
 	yukle($resim);
 
 	if (! F3::exists('message')) {
+		// here we go!
 		$kul->save();
 		// TODO: burada bir özet verelim
 		echo "Başarıyla kaydedildi.";

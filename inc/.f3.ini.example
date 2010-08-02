@@ -1,0 +1,17 @@
+[global]
+; F3 magic'leri
+RELEASE="FALSE"
+GUI="gui/"
+FONTS="fonts/"
+IMPORTS="inc/"
+E404="layout.htm"
+extlink="window.open(this.href); return false;"
+
+; Veritabanı
+DB.name="söylemem"
+DB.user="bunu_da_söylemem"
+DB.password="bir_parola_ver"
+DB.dsn="mysql:host=localhost;port=3306;dbname={@DB.name}"
+
+; Uygulamaya özel ayarlar
+uploaddir="resim/"
