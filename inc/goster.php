@@ -91,7 +91,9 @@ function iller() {
 
 F3::clear('SESSION.captcha');
 F3::call(':db');
+
 F3::set('iller', iller());
+F3::set('template', 'goster');
 F3::call('render');
 
 ?>

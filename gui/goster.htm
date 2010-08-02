@@ -1,0 +1,60 @@
+<dl>
+	<dt>
+		<h1 >
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;
+			UZEM ÖN KAYIT FORMU
+		</h1>
+	</dt>
+</dl>
+<br/>
+<form name="login" action="kaydet" method="POST" id="login" enctype="multipart/form-data">
+  <dl>
+ 	<h1>
+ 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 	&nbsp;&nbsp;&nbsp;
+ 	KİŞİSEL BİLGİLER
+ 	</h1>
+ 	<br/>
+ 	<F3:check if="{@error}">
+ 	  <F3:true><p class="fail" style="color:red">{@error}</p></F3:true>
+ 	</F3:check>
+ 	<dt>TC kimlik no (*):</dt>
+ 	<dd><input class="required" type="text" name="tc" id= "tc" value="{@REQUEST.tc}" maxlength = 11  /></dd>
+ 	<dt> Ad    (*):</dt>
+ 	<dd><input class="required" type="text" name="ad" id = "ad" value="{@REQUEST.ad}" maxlength = 40 /></dd>
+ 	<dt> Soyad (*):</dt>
+ 	<dd><input class="required" type="text" name="soyad" id = "soyad" value="{@REQUEST.soyad}"  maxlength=40 /></dd>
+
+ 	<dt><label for="file">Resminiz (.jpg):</label></dt>
+ 	<dd><input type="file" name="file" id="file" /></dd>
+ 	
+ 	<dd><!--void--></dd>
+ 	<dt><a href="">Resmi yenile</a></dt>
+ 	<p><img src="captcha" alt="Güvenlik Resmi" title="Güvenlik Resmi"/></p>
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 						Yukarıdaki güvenlik kodunu giriniz<br/><br/>
+ 	<dt><label for="captcha">Onay Kodu (*):</label><dt>
+         <dd><input type="text" name="captcha" id="captcha" /></dd>
+ 		<br/>
+ 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 		
+ 		<input class="required" type="submit" value="            Kayıt Ol            " />
+ 		
+ 	</dd>
+  </dl>
+</form>
+<br/><br/>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ "*": doldurulması zorunlu alan.
