@@ -47,6 +47,7 @@ F3::clear('message');
 
 if (! F3::exists('SESSION.captcha')) {
 	F3::set('message', 'Oturum Güvenlik Kodu eksik');
+	return;
 }
 
 F3::input($alan='captcha',
