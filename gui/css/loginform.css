@@ -1,0 +1,189 @@
+/*html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6,
+
+p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+
+em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt,
+
+var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+
+tbody, tfoot, thead, tr, th, td*/
+
+body {
+    font-family: Verdana, arial, helvetica, sans-serif;
+}
+
+dl {
+    margin-left: 20%;
+}
+#checkbox {
+    width: 29px;
+}
+form dt {
+    width: 8em;
+    float: left;
+    text-align: right;
+    display: block;
+    font: 14px Arial, Helvetica, sans-serif;
+}
+form dd {
+    margin-left: 8.5em;
+    margin-bottom: 5px;
+}
+input.metinAlani {
+    color: #781351;
+    background-color: #b5c9e2;
+    border: 1px solid #31557f;
+    font: 10px Arial, Helvetica, sans-serif;
+}
+input.textedit {
+    width: 520px;
+}
+input.chbox {
+    color: #781351;
+    margin-left: 0px;
+    background-color: #b5c9e2;
+    border: 0.12px solid #31557f;
+    font: 10px Arial, Helvetica, sans-serif;
+}
+input.gonder {
+    margin-left: 135px;
+    text-align: center;
+    width: 180px;
+    color: #224059;
+/*    background-color: #b5c9e2;
+    border-top: 2px #cce3ff solid;
+    border-left: 2px #cce3ff solid;
+    border-bottom: 2px #31557f solid;
+    border-right: 2px #31557f solid;    */
+    font: bold 12px Arial, Helvetica, sans-serif;    
+}
+input.gonder2 {
+    text-align: center;
+    width: 200px;
+    color: #224059;
+    font: bold 12px Arial, Helvetica, sans-serif;
+}
+fieldset {
+    border: 1px solid #31557f;
+    width: 15em;
+    padding-bottom:0.5em;
+}
+
+/* tabular data */
+
+table {
+    font-size: 12px;
+    border-collapse: collapse;
+    /*width: 100%;*/
+    margin: .4em 0 1.5em 0;
+}
+
+table tr {
+    vertical-align: baseline;
+}
+
+table td {
+    text-align: left;
+    padding: .1em .3em .2em .3em;
+}
+
+table td.num {
+    text-align: right;
+    padding: .1em .3em .2em .3em;
+}
+
+table th {
+    border: none;
+    color: #fff;
+    padding: .1em .3em .2em .3em;
+    text-align: left; /* Safari needs this */
+    vertical-align: bottom;
+    background: #c1c4c6 url(../images/bg-th.gif) repeat-x 0 100%;
+}
+
+table th.row-heading {
+    color: #555f6a;
+    font-weight: normal;
+    vertical-align: top;
+    background-color: transparent; /* Safari needs this */
+    background-image: none; /* Safari needs this */
+}
+
+legend {
+    color: #224059;
+    background-color: #b5c9e2;
+    border: 1px solid #31557f;
+    padding: 2px 6px
+}
+label {
+    font:bold 13px Arial, Helvetica, sans-serif;
+}
+
+
+/*  --------------{ typography }-----------------  */
+
+h1 {
+}
+h1 .hata {
+    font-family: arial, helvetica, verdana, sans-serif;
+    font-size: 120%;
+    color: red;
+    text-align: center;
+}
+
+h2 {
+}
+h2 .hata {
+    font-family: arial, helvetica, verdana, sans-serif;
+    font-size: 120%;
+    color: red;
+    text-align: center;
+}
+
+/*  -----{ footer }---------------------------  */
+
+#footer {
+    font: 70% Verdana, Helvetica, sans-serif;
+    text-align:center;
+    margin-bottom: 0px;
+}
+
+#footer p {
+    display:block;
+    width: 500px;
+    height: 50px;
+    margin: 0 0 0 0;
+    text-align: center;
+    float: left;
+}
+
+#footer ul {
+}
+
+#footer li {
+    list-style: none;
+    display: inline;
+}
+#footer li a {
+    font-size: 70%;
+    padding: 0 6px;
+    float: left;
+    text-align: center;
+    display: block;
+    width: auto;
+    background: transparent url(../images/bg-divider-bottom.gif) repeat-y 100% 0;
+    text-decoration: none;
+}
+#footer li a:hover,
+#footer li a.rss:hover {
+    background-color: #d5e7f0;
+}
+
+#footer li.last a {
+    background-image: none;
+}
+
+#footer li a.rss {
+    background: transparent url(../images/icn-rss-small.gif) no-repeat 6px 50%;
+    padding-left: 38px;
+}
