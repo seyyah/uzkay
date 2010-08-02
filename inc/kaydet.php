@@ -1,5 +1,7 @@
 <?php
 
+include 'lib/F1.php';
+
 // denetleme yapalım
 F3::call(':denetle');
 
@@ -59,7 +61,10 @@ if (! F3::exists('message')) {
 		// here we go!
 		$kul->save();
 		// TODO: burada bir özet verelim
-		echo "Başarıyla kaydedildi.";
+		echo "Kaydınız başarıyla yapıldı.";
+		F3::reroute("$F3/");
+		// reroute'tan dolayı ön sayfaya dönüyoruz
+		// ama hata yok
 	}
 	// hatalı bir resim kaydı varsa çöp bırakmamaya çalış
 	// FIXME: bu mantık üzerinde biraz daha çalış
@@ -68,10 +73,9 @@ if (! F3::exists('message')) {
 		;
 	}
 }
-else {
-	// hata var, dön başa ve tekrar kayıt al.
-	// message alanı dolu ve layout.htm'de görüntülenecek
-	F3::call(':goster');
-}
+
+// hata var, dön başa ve tekrar kayıt al.
+// message alanı dolu ve layout.htm'de görüntülenecek
+F3::call(':goster');
 
 ?>
