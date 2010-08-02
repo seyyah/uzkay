@@ -21,6 +21,7 @@ if (! is_table_exists('kul')) {
 				'tc INT (11) UNSIGNED NOT NULL,'.
 				'ad CHAR (15),'.
 				'soyad CHAR (20),'.
+				'tarih varchar(100),'.
 				'PRIMARY KEY(tc)'.
 			');' 
 		)

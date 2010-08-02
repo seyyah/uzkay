@@ -94,6 +94,4 @@ F3::input($alan='tc',
 	}
 );
 
-F3::set('REQUEST.tarih', date("h:i / d-m-Y"));
-
 ?>

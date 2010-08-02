@@ -6,6 +6,9 @@ F3::call(':denetle');
 
 
 if (! F3::exists('message')) {
+	$kul = new Axon('kul');
+	$kul->tarih = date("h:i / d-m-Y");
+	$kul->save();
 	// TODO: bir özet ver
 	echo "Başarıyla kaydedildi.";
 }
