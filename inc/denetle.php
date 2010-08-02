@@ -50,17 +50,17 @@ if (! F3::exists('SESSION.captcha')) {
 	return;
 }
 
-//F3::input($alan='captcha',
-	//function($value) use($alan) {
-		//$ne = "Güvenlik Kodu";
-		//$captcha = F3::get('SESSION.captcha');
-		//if ($hata = denetle(strtolower($value), array(
-			//'dolu'   => array(true,                 "$ne boş bırakılamaz"),
-			//'enaz'   => array(strlen($captcha),     "$ne çok kısa"),
-			//'degeri' => array(strtolower($captcha), "Yanlış $ne"),
-		//))) { F3::set('message', $hata); return; }
-	//}
-//);
+F3::input($alan='captcha',
+	function($value) use($alan) {
+		$ne = "Güvenlik Kodu";
+		$captcha = F3::get('SESSION.captcha');
+		if ($hata = denetle(strtolower($value), array(
+			'dolu'   => array(true,                 "$ne boş bırakılamaz"),
+			'enaz'   => array(strlen($captcha),     "$ne çok kısa"),
+			'degeri' => array(strtolower($captcha), "Yanlış $ne"),
+		))) { F3::set('message', $hata); return; }
+	}
+);
 
 foreach (array('ad', 'soyad') as $alan) {
 	F3::input($alan,
