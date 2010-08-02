@@ -5,7 +5,7 @@ F3::call(':denetle');
 
 // FIXME bunu biraz daha genelleştir, PNG falan yönetsin
 function yukle($hedef=NULL, $alan='file') {
-	$yuklenen = F3::get("FILES.$file.tmp_name");
+	$yuklenen = F3::get("FILES.$alan.tmp_name");
 
 	// hedef ve yüklenen dosyanın boş olmasına izin veriyoruz
 	// herhangi biri boşsa mesele yok, çağırana dön
