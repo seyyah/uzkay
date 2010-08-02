@@ -30,9 +30,7 @@ function yukle($hedef=NULL) {
 		else if (!move_uploaded_file($yuklenen, $hedef)) {
 			F3::set('message', 'Dosya yükleme hatası');
 		}
-		else {
-			return true;
-		}
+		// yok başka bir ihtimal!
 	}
 	else {
 		// bu aslında bir atak işareti
