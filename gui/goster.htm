@@ -30,6 +30,87 @@
 
  	<dt><label for="file">Resminiz (.jpg):</label></dt>
  	<dd><input type="file" name="file" id="file" /></dd>
+	<dt>Kızlık soyadı (*):</dt>
+	<dd><input class="required" type="text" name = "kizliksoyad" id = "kizliksoyad" value="{@REQUEST.kizliksoyad}"  /></dd>
+	<dt>Baba adı   (*):</dt>
+	<dd><input class="required" type="text" name = "babaad"   id = "babaad" value="{@REQUEST.babaad}"     /></dd>
+	<dt>Ana adı    (*):</dt>
+	<dd><input class="required" type="text" name = "anaad"    id = "anaad" value="{@REQUEST.anaad}"             /></dd>
+	<br/>
+	<h1>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;
+		İLETİŞİM BİLGİLERİ</h1>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Cep telefonunuzu 5xxxxxxxxx 10 haneli olcak şekilde<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	aralarda boşluk bırakmadan yazınız<br/><br/>
+	<dt>Cep tel    (*):</dt>
+	<dd><input class="required" type="text" name = "ceptel" id = "ceptel" value="{@REQUEST.ceptel}" maxlength = 10 />Örn : 5433331919</dd>
+	<dt>Ev tel        :</dt>
+	<dd><input                  type="text" name = "evtel" id = "evtel" value="{@REQUEST.evtel}" maxlength = 10 />Örn : 3623331919</dd>
+	<dt>Email         :</dt>
+	<dd><input 					type="text" name = "email"  id = "email" value="{@REQUEST.email}"               /></dd>
+	<dt>Ev adres   (*):</dt>
+	<dd><input class="required" type="text" name = "evadres"  id = "evadres" value="{@REQUEST.evadres}"         /></dd>
+	<dt>İl 		   (*):</dt>
+	<dd><select name="il">
+			<F3:repeat index="{@il}" group="{@iller}">
+			  <option value='{@il}'>{@il}</option>
+			</F3:repeat>
+		</select>
+	</dd>
+	<dt>İlçe        (*):</dt>
+	<dd><input class="required" type="text" name = "ilce" id = "ilce" value="{@REQUEST.ilce}" maxlength = "20"  /></dd>
+	<br/>
+
+	Aşağıdaki bilgileri, ebelik ön lisans diplomasını aldığınız<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	  yeri baz alarak doldurunuz<br/>
+	  <br/>
+	
+		<dt>Üniversite  (*):</dt>
+		<dd><input class="required" type="text" name = "uni"    id = "uni" value="{@REQUEST.uni}"    			/></dd>
+		<dt>Yüksek Okul (*):</dt>
+		<dd><input class="required" type="text" name = "bolum"  id = "bolum" value="{@REQUEST.bolum}"   	    /></dd>
+	
+	<br/>
+	<h1>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			İŞ BİLGİLERİ
+	</h1>
+	<br/>
+	Aşağıdaki bilgileri, çalıştığınız yeri baz alarak doldurunuz<br/>
+	<br/>
+	<dt>Kurum (*):</dt>
+	<dd><input class="required" type="text" name = "calismakurum"  id = "calismakurum" value="{@REQUEST.calismakurum}"/></dd>
+	<dt>Birim (*):</dt>
+	<dd><input class="required" type="text" name = "calismabirim"  id = "calismabirim" value="{@REQUEST.calismabirim}"/></dd>
+	<dt>Adres (*):</dt>
+	<dd><input class="required" type="text" name = "isadres" id = "isadres" value="{@REQUEST.isadres}"/></dd>
+	<dt>İl (*):</dt>
+	<dd><select name="isil">
+				<F3:repeat index="{@il}" group="{@iller}">
+					  <option value='{@il}'>{@il}</option>
+				</F3:repeat>
+		</select>
+	</dd>
+	<br/>
+	<dd><input type="hidden" name="tarih" id="tarih" value="{@REQUEST.tarih}"></dd>
+	2009 yılında ebelik önlisans programına daha <br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;önceden önkayıt yaptırdınız mı ?  (*)<br/><br/>
+	<center>
+		<input type="radio" name="onkayit" value="0" checked> Hayır
+		<input type="radio" name="onkayit" value="1" >Evet
+		</center>
+	<br/>
  	
  	<dd><!--void--></dd>
  	<dt><a href="">Resmi yenile</a></dt>
