@@ -62,8 +62,8 @@ if (! F3::exists('error')) {
 		$kul->save();
 		// TODO: burada bir özet verelim
 		F3::set('error', 'Kaydınız başarıyla yapıldı.');
-		F3::reroute("$F3/");
-		// reroute'tan dolayı ön sayfaya dönüyoruz
+		F3::call(':ok');
+		return;
 	}
 	// hatalı bir resim kaydı varsa çöp bırakmamaya çalış
 	// FIXME: bu mantık üzerinde biraz daha çalış
