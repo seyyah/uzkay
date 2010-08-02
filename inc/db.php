@@ -1,5 +1,8 @@
 <?php
 
+// F3'te her tablo bir klas, tablodaki her kayıt da bu klas'tan çıkan bir 
+// nesne.  Tablo'yu, dolayısıyla klas'ı burada tanımlıyoruz
+
 // FIXME istediğim gibi çalışmıyor, sonra bakacağım
 function is_table_exists($table, $db=NULL) {
 	if (is_null($db))

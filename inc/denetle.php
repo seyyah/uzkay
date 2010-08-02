@@ -11,6 +11,7 @@ function is_tc($tc) {
 	return (substr($tc, -2) == $sonIki);
 }
 
+// FIXME: bunu bir işlev tablosuna dönüştür
 function denetle($verilen, $tarif) {
 	foreach ($tarif as $ne => $bilgi) {
 		$kosul = array_shift($bilgi);
@@ -43,13 +44,16 @@ function denetle($verilen, $tarif) {
 	}
 }
 
+// temiz bir sayfa açalım!
 F3::clear('message');
 
+// captcha'sız maça çıkmayız, sağlam gidelim
 if (! F3::exists('SESSION.captcha')) {
 	F3::set('message', 'Oturum Güvenlik Kodu eksik');
 	return;
 }
 
+// captcha tamam mı?
 F3::input($alan='captcha',
 	function($value) use($alan) {
 		$ne = "Güvenlik Kodu";
@@ -62,6 +66,7 @@ F3::input($alan='captcha',
 	}
 );
 
+// ad ve soyad şart
 foreach (array('ad', 'soyad') as $alan) {
 	F3::input($alan,
 		function($value) use($alan) {
@@ -76,6 +81,7 @@ foreach (array('ad', 'soyad') as $alan) {
 	);
 }
 
+// tc numara geçerli olmalı
 F3::input($alan='tc',
 	function($value) use($alan) {
 		$ne = "Tc No";

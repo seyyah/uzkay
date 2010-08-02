@@ -1,6 +1,6 @@
 <?php
 
-F3::clear('message');
+// denetleme yapalım
 F3::call(':denetle');
 
 function yukle($hedef=NULL) {
@@ -42,6 +42,8 @@ function yukle($hedef=NULL) {
 	return false;
 }
 
+// denetleme sırasında hata oluşmamışsa kayıt yapacağız
+// hata olmadığını nereden anlıyoruz?  "message"a bakarak
 if (! F3::exists('message')) {
 	$kul = new Axon('kul');
 	$kul->copyFrom('REQUEST');
@@ -65,7 +67,8 @@ if (! F3::exists('message')) {
 	}
 }
 else {
-	// Hata var, dön başa ve tekrar kayıt al.
+	// hata var, dön başa ve tekrar kayıt al.
+	// message alanı dolu ve layout.htm'de görüntülenecek
 	F3::call(':goster');
 }
 
