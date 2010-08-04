@@ -1,9 +1,9 @@
 <dl>
 	<dt>
 		<h1 >
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			
 			UZEM ÖN KAYIT FORMU
 		</h1>
 	</dt>
@@ -11,12 +11,15 @@
 <br/>
 <form name="login" action="kaydet" method="POST" id="login" enctype="multipart/form-data">
   <dl>
+
  	<h1>
  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- 	&nbsp;&nbsp;&nbsp;
- 	KİŞİSEL BİLGİLER
+	&nbsp;
+
+ 			KİŞİSEL BİLGİLER
  	</h1>
+	<fieldset>
  	<br/>
  	<F3:check if="{@error}">
  	  <F3:true><p class="fail" style="color:red">{@error}</p></F3:true>
@@ -36,18 +39,25 @@
 	<dd><input class="required" type="text" name = "anaad"    id = "anaad" value="{@REQUEST.anaad}"             /></dd>
 	<dt><label for="file">Resminiz (JPG):</label></dt>
 	<dd><input type="file" name="file" id="file" /></dd>
+
+	</fieldset>
+
 	<br/>
 	<h1>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;
-		İLETİŞİM BİLGİLERİ</h1>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+			İLETİŞİM BİLGİLERİ
+	</h1>
+	<fieldset>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	Cep telefonunuzu 5xxxxxxxxx 10 haneli olacak şekilde<br/>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	Cep telefonunuzu<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	5xxxxxxxxx 10 haneli olacak şekilde<br/>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	aralarda boşluk bırakmadan yazınız.<br/><br/>
+	aralarda boşluk bırakmadan yazınız<br/><br/>
 	<dt>Cep tel    (*):</dt>
 	<dd><input class="required" type="text" name = "ceptel" id = "ceptel" value="{@REQUEST.ceptel}" maxlength = 10 />Örn : 5433331919</dd>
 	<dt>Ev tel        :</dt>
@@ -66,28 +76,35 @@
 	<dt>İlçe        (*):</dt>
 	<dd><input class="required" type="text" name = "ilce" id = "ilce" value="{@REQUEST.ilce}" maxlength = "20"  /></dd>
 	<br/>
-
-	Aşağıdaki bilgileri, ebelik ön lisans diplomasını aldığınız<br/>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	Aşağıdaki bilgileri<br/>
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	  yeri baz alarak doldurunuz<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	ebelik ön lisans diplomasını<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	aldığınız yeri baz alarak doldurunuz<br/>
 	  <br/>
 	
 		<dt>Üniversite  (*):</dt>
 		<dd><input class="required" type="text" name = "uni"    id = "uni" value="{@REQUEST.uni}"    			/></dd>
 		<dt>Yüksek Okul (*):</dt>
 		<dd><input class="required" type="text" name = "bolum"  id = "bolum" value="{@REQUEST.bolum}"   	    /></dd>
-	
+	</fieldset>
 	<br/>
 	<h1>
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			İŞ BİLGİLERİ
 	</h1>
-	<br/>
-	Aşağıdaki bilgileri, çalıştığınız yeri baz alarak doldurunuz<br/>
+	<fieldset>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;
+	Aşağıdaki bilgileri<br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	çalıştığınız yeri baz alarak doldurunuz<br/>
 	<br/>
 	<dt>Kurum (*):</dt>
 	<dd><input class="required" type="text" name = "calismakurum"  id = "calismakurum" value="{@REQUEST.calismakurum}"/></dd>
@@ -102,10 +119,15 @@
 				</F3:repeat>
 		</select>
 	</dd>
+	
+	</fieldset>
 	<br/>
-	<dd><input type="hidden" name="tarih" id="tarih" value="{@REQUEST.tarih}"></dd>
+	<dd><input type="hidden" name="tarih" id="tarih" value="{@REQUEST.tarih}"></dd>&nbsp;&nbsp;&nbsp;
 	2009 yılında ebelik önlisans programına daha <br/>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;önceden önkayıt yaptırdınız mı ?  (*)<br/><br/>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;önceden önkayıt yaptırdınız mı ?  (*)<br/><br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;
 	Hayır <input type="radio" name="onkayit" value="0" class="required" /> 
 	Evet <input type="radio" name="onkayit" value="1" />
 	<br/>
@@ -116,15 +138,14 @@
  	<p><img src="captcha" alt="Güvenlik Resmi" title="Güvenlik Resmi"/></p>
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- 						Yukarıdaki güvenlik kodunu giriniz<br/><br/>
+ 	Yukarıdaki güvenlik kodunu giriniz<br/><br/>
  	<dt><label for="captcha">Onay Kodu (*):</label><dt>
          <dd><input type="text" name="captcha" id="captcha" /></dd>
  		<br/>
  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
  		
  		<input class="required" type="submit" value="            Kayıt Ol            " />
  		
@@ -132,9 +153,8 @@
   </dl>
 </form>
 <br/><br/>
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  "*": doldurulması zorunlu alan.
