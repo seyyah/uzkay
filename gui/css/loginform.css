@@ -109,12 +109,12 @@ table th.row-heading {
     background-image: none; /* Safari needs this */
 }
 
-legend {
-    color: #224059;
-    background-color: #b5c9e2;
-    border: 1px solid #31557f;
-    padding: 2px 6px
-}
+/*legend {*/
+    /*color: #224059;*/
+    /*background-color: #b5c9e2;*/
+    /*border: 1px solid #31557f;*/
+    /*padding: 2px 6px*/
+/*}*/
 label {
     font:bold 13px Arial, Helvetica, sans-serif;
 }
@@ -186,4 +186,27 @@ h2 .hata {
 #footer li a.rss {
     background: transparent url(../images/icn-rss-small.gif) no-repeat 6px 50%;
     padding-left: 38px;
+}
+
+fieldset {
+	width: 82%;
+	border: 1px gray solid;
+	padding: 1em;
+}
+
+fieldset > legend {
+	color:#0354c2;
+	font-weight: bold;
+	font-size: 1.3em;
+	font-family: helvetica, geneva, arial, sans-serif;
+	background: none;
+	padding: 0.5em;
+}
+
+dl {
+	margin-left: 10%;
+}
+
+.info {
+	font-size: xx-small;
 }
