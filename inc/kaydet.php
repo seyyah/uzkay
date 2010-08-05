@@ -60,6 +60,9 @@ if (! F3::exists('error')) {
 	if (! F3::exists('error')) {
 		// here we go!
 		$kul->save();
+		if ($kul->onkayit == "1") {
+			F3::call(':onkayitli');
+		}
 		// TODO: burada bir özet verelim
 		F3::set('message', 'Kaydınız başarıyla yapıldı.');
 		return F3::call(':ok');
