@@ -190,8 +190,8 @@ h2 .hata {
 
 fieldset {
 	width: 82%;
-	border: 1px gray solid;
-	padding: 1em;
+	border: 2px gray solid;
+	padding: 1.5em;
 }
 
 fieldset > legend {
@@ -200,7 +200,7 @@ fieldset > legend {
 	font-size: 1.3em;
 	font-family: helvetica, geneva, arial, sans-serif;
 	background: none;
-	padding: 0.5em;
+	padding: 1em;
 }
 
 dl {
