@@ -32,10 +32,10 @@
 	<dd><input class="required" type="text" name = "anaad"    id = "anaad" value="{@REQUEST.anaad}"             /></dd>
 	<dt><label for="file">Resim:</label></dt>
 	<dd><input type="file" name="file" id="file"/></dd>
+	<dd><div class="info">
+	Resim 350 KB'ı geçmemeli,JPEG formatında olmalı
+	</div></dd>
 	<br />
-	<dd class="info">
-	Resim 350 KB'ı geçmemeli ve JPEG formatında olmalıdır.
-	</dd>
 
 	</fieldset>
 
@@ -81,7 +81,7 @@
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<fieldset>
 	  <legend>İŞ BİLGİLERİ</legend>
-	Aşağıdaki bilgileri çalıştığınız yeri baz alarak doldurunuz<br /><br />
+	Aşağıdaki bilgileri çalıştığınız yeri baz alarak doldurunuz.<br /><br />
 	<dt>Kurum (*):</dt>
 	<dd><input class="required" type="text" name = "calismakurum"  id = "calismakurum" value="{@REQUEST.calismakurum}"/></dd>
 	<dt>Birim (*):</dt>
@@ -101,7 +101,7 @@
 	<fieldset>
 	  <legend>DİĞER BİLGİLER</legend>
 	<input type="hidden" name="tarih" id="tarih" value="{@REQUEST.tarih}">
-	  <strong>2009 yılında</strong> Ebelik Önlisans Programına kayıtlı mıydınız?<br/>
+	  <strong>2009 yılında</strong> Ebelik Önlisans Programına kayıt yaptırdınız mı?<br/>
 	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -111,20 +111,19 @@
 	</fieldset>
  	
  	<dd><!--void--></dd>
-	<div id="captcha">
-	<center>
-	<p><img id="captcha" src="captcha" alt="Güvenlik Resmi" title="Güvenlik Resmi - Güncellemek için lütfen tıklayın"/></p>
- 	<div class="info">Resimdeki güvenlik kodunu girin.   Yenilemek için resme tıklayın.</div><br />
-
-	</center>
-	</div>
+	<br /><br />
 	<dt><label for="captcha">Onay Kodu (*):</label><dt>
-         <dd><input type="text" name="captcha" id="captcha" /></dd>
- 		<br />
+        <dd>
+	<div id="captcha">
+	  <input type="text" name="captcha" id="captcha" />
+	  <img id="captcha" src="captcha" alt="Güvenlik Resmi" title="Güvenlik Resmi - Güncellemek için lütfen tıklayın"/>
+	</div>
+	</dd><br />
+ 	<dd><div class="info">Resimdeki güvenlik kodunu girin.   Yenilemek için resme tıklayın.</div></dd><br />
  		
  	 <dd><input class="required" type="submit" value="            Kayıt Ol            " /></dd>
 	<br />
 	<br />
-	<strong>*</strong>: doldurulması zorunlu alan.
+	<strong>*</strong>&nbsp;&nbsp;doldurulması zorunlu alan.
   </dl>
 </form>

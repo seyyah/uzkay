@@ -207,7 +207,18 @@ dl {
 	margin-left: 10%;
 }
 
+form dt {
+	width: 9em;
+}
+
 .info {
-	font-size: xx-small;
+	font-size: small;
 	margin-left: 0.5em;
+}
+
+#captcha > img {
+	float: right;
+	display: inline-block;
+	margin-top: -1.5em;
+	margin-right: 6em;
 }
