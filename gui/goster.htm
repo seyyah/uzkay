@@ -37,20 +37,29 @@ okuyunuz.  <strong>DİKKAT!  Bu ön kayıt formu Ebelik Lisans Tamamlama
 	<dd>
 	  Gün
 	  <select name="dogumgun">
-	    <F3:repeat index="{@gun}" group="{@gunler}">
-	      <option value='{@gun}'>{@gun}</option>
+	    <F3:repeat index='{@gun}' group='{@gunler}'>
+	      <F3:check if='{@gun==@REQUEST.dogumgun}'>
+		<F3:true><option value='{@gun}' selected>{@gun}</option></F3:true>
+		<F3:false><option value='{@gun}'>{@gun}</option></F3:false>
+	      </F3:check>
 	    </F3:repeat>
 	  </select>
 	  Ay
 	  <select name="dogumay">
 	    <F3:repeat index="{@ay}" group="{@aylar}">
-	      <option value='{@ay}'>{@ay}</option>
+	      <F3:check if='{@ay==@REQUEST.dogumay}'>
+		<F3:true><option value='{@ay}' selected>{@ay}</option></F3:true>
+		<F3:false><option value='{@ay}'>{@ay}</option></F3:false>
+	      </F3:check>
 	    </F3:repeat>
 	  </select>
 	  Yıl
 	  <select name="dogumyil">
 	    <F3:repeat index="{@yil}" group="{@yillar}">
-	      <option value='{@yil}'>{@yil}</option>
+	      <F3:check if='{@yil==@REQUEST.dogumyil}'>
+		<F3:true><option value='{@yil}' selected>{@yil}</option></F3:true>
+		<F3:false><option value='{@yil}'>{@yil}</option></F3:false>
+	      </F3:check>
 	    </F3:repeat>
 	  </select>
 	</dd>
@@ -59,7 +68,10 @@ okuyunuz.  <strong>DİKKAT!  Bu ön kayıt formu Ebelik Lisans Tamamlama
 	<dd>
 	  <select name="dogumil">
 	    <F3:repeat index="{@il}" group="{@iller}">
-	      <option value='{@il}'>{@il}</option>
+	      <F3:check if='{@il==@REQUEST.dogumil}'>
+		<F3:true><option value='{@il}' selected>{@il}</option></F3:true>
+		<F3:false><option value='{@il}'>{@il}</option></F3:false>
+	      </F3:check>
 	    </F3:repeat>
 	  </select>
 	</dd>
@@ -88,18 +100,25 @@ okuyunuz.  <strong>DİKKAT!  Bu ön kayıt formu Ebelik Lisans Tamamlama
 	    value="{@REQUEST.evtel}" maxlength = 10 /> <span class="info">Ör.  
 	    3623331919</span></dd>
 	<dt>Email         :</dt>
-	<dd><input 					type="text" name = "email"  id = "email" value="{@REQUEST.email}"               /></dd>
+	<dd><input type="text" name = "email" class="email" id = "email" 
+	value="{@REQUEST.email}"               /></dd>
 	<dt>Ev adres   (*):</dt>
 	<dd><input class="required" type="text" name = "evadres"  id = "evadres" value="{@REQUEST.evadres}"         /></dd>
 	<dt>İl 		   (*):</dt>
-	<dd><select name="il">
-			<F3:repeat index="{@il}" group="{@iller}">
-			  <option value='{@il}'>{@il}</option>
-			</F3:repeat>
-		</select>
+	<dd>
+	  <select name="il">
+	    <F3:repeat index="{@il}" group="{@iller}">
+	      <F3:check if='{@il==@REQUEST.il}'>
+		<F3:true><option value='{@il}' selected>{@il}</option></F3:true>
+		<F3:false><option value='{@il}'>{@il}</option></F3:false>
+	      </F3:check>
+	      <option value='{@il}'>{@il}</option>
+	    </F3:repeat>
+	  </select>
 	</dd>
 	<dt>İlçe        (*):</dt>
-	<dd><input class="required" type="text" name = "ilce" id = "ilce" value="{@REQUEST.ilce}" maxlength = "20"  /></dd>
+	<dd>
+	  <input class="required" type="text" name = "ilce" id = "ilce" value="{@REQUEST.ilce}" maxlength = "20"  /></dd>
 	<br/>
 	Aşağıdaki bilgileri ebelik ön lisans diplomasını aldığınız yeri baz alarak doldurunuz.<br /> <br />
 	
@@ -119,11 +138,15 @@ okuyunuz.  <strong>DİKKAT!  Bu ön kayıt formu Ebelik Lisans Tamamlama
 	<dt>Adres (*):</dt>
 	<dd><input class="required" type="text" name = "isadres" id = "isadres" value="{@REQUEST.isadres}"/></dd>
 	<dt>İl (*):</dt>
-	<dd><select name="isil">
-				<F3:repeat index="{@il}" group="{@iller}">
-					  <option value='{@il}'>{@il}</option>
-				</F3:repeat>
-		</select>
+	<dd>
+	  <select name="isil">
+	    <F3:repeat index="{@il}" group="{@iller}">
+	      <F3:check if='{@il==@REQUEST.isil}'>
+		<F3:true><option value='{@il}' selected>{@il}</option></F3:true>
+		<F3:false><option value='{@il}'>{@il}</option></F3:false>
+	      </F3:check>
+	    </F3:repeat>
+	  </select>
 	</dd>
 	<dt>İlçe (*):</dt>
 	<dd><input class="required" type="text" name = "isilce" id = "isilce" value="{@REQUEST.isilce}" maxlength = "20"  /></dd>
