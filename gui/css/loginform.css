@@ -208,7 +208,8 @@ dl {
 }
 
 form dt {
-	width: 9em;
+	width: 10em;
+	margin-right: 0.5em;
 }
 
 .info {

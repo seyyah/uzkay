@@ -21,24 +21,30 @@ F3::sql(
 	array(
 		'CREATE TABLE IF NOT EXISTS kul ('.
 			'id INT(11) NOT NULL auto_increment,'.
-			'tc VARCHAR(11) NOT NULL,'.
-			'ad CHAR (32),'.
-			'soyad CHAR (32),'.
+			'tc varchar(11) NOT NULL,'.
+			'ad varchar(32),'.
+			'soyad varchar(32),'.
 			'kizliksoyad varchar(32),'.
 			'babaad varchar(32),'.
 			'anaad varchar(32),'.
-			'ceptel varchar(11),'.
-			'evtel varchar(11),'.
+			'dogumgun varchar(2),'.
+			'dogumay varchar(2),'.
+			'dogumyil varchar(4),'.
+			'dogumil varchar(32),'.
+			'dogumilce varchar(32),'.
+			'ceptel varchar(10),'.
+			'evtel varchar(10),'.
 			'email varchar(100),'.
 			'evadres varchar(100),'.
 			'il varchar(32),'.
 			'ilce varchar(32),'.
 			'uni varchar(100),'.
-			'bolum varchar(100),'.
+			'yokul varchar(100),'.
 			'calismakurum varchar(100),'.
 			'calismabirim varchar(100),'.
 			'isadres varchar(100),'.
 			'isil varchar(32),'.
+			'isilce varchar(32),'.
 			'onkayit varchar(1),'.
 			'tarih varchar(100),'.
 			'PRIMARY KEY(id)'.

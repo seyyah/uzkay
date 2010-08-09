@@ -89,10 +89,26 @@ function iller() {
 	);
 }
 
+function gunler() {
+	return range(1, 31);
+}
+function aylar() {
+	return range(1, 12);
+}
+function yillar() {
+	$busene = date('Y');
+	// sorarım isze insan kaç sene yaşar?
+	return range($busene, $busene - 100);
+}
+
 F3::clear('SESSION.captcha');
 F3::call(':db');
 
+F3::set('gunler', gunler());
+F3::set('aylar', aylar());
+F3::set('yillar', yillar());
 F3::set('iller', iller());
+
 F3::set('template', 'goster');
 F3::call('render');
 

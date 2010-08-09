@@ -18,7 +18,7 @@ function yukle($hedef=NULL, $alan='file') {
 	// bu bir uploaded dosya olmalı, fake dosyalara izin yok
 	if (is_uploaded_file($yuklenen)) {
 		// boyutu sınırla, değeri öylesine seçtim
-		if (filesize($yuklenen) > 350000) {
+		if (filesize($yuklenen) > 600000) {
 			F3::set('error', 'Resim çok büyük');
 		}
 		// şimdilik sadece JPEG, dosya tipini içine bakarak tespit ediyoruz
@@ -48,14 +48,20 @@ function yukle($hedef=NULL, $alan='file') {
 if (! F3::exists('error')) {
 	$kul = new Axon('kul');
 	$kul->copyFrom('REQUEST');
-	$kul->tarih = date("h:i / d-m-Y");
+	$kul->tarih = date("d-m-Y h:i");
 
 	// artık elimizde temiz bir tc no var, resmi kaydedelim
 	// ilk kurulum sırasında bu <uploaddir> dizinini oluştur
 	// php prosesi yazacağına göre izinleri doğru ayarla
 	// 	chgrp -R www-data <uploaddir> && chmod g+w <uploaddir>
-	$resim = F3::get('uploaddir') . $kul->tc . '.jpg';
-	yukle($resim);
+
+	$tc = $kul->tc;
+	F3::set('tc', $tc);
+
+	if (! empty($tc)) {
+		$resim = F3::get('uploaddir') . $kul->tc . '.jpg';
+		yukle($resim);
+	}
 
 	if (! F3::exists('error')) {
 		// here we go!

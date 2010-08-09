@@ -1,12 +1,11 @@
 <center>
-		<h1 >
-			UZEM ÖN KAYIT FORMU
-		</h1>
+  <h1 >
+    EBELİK LİSANS TAMAMLAMA ÖN KAYIT BAŞVURUSU
+  </h1>
 </center>
 <br/>
 <form name="login" action="kaydet" method="POST" id="login" enctype="multipart/form-data">
   <dl>
-
 	<fieldset>
 	  <legend>KİŞİSEL BİLGİLER</legend>
 	<F3:check if="{@error}">
@@ -21,14 +20,47 @@
 
 	<dt>Kızlık Soyadı (*):</dt>
 	<dd><input class="required" type="text" name = "kizliksoyad" id = "kizliksoyad" value="{@REQUEST.kizliksoyad}"  /></dd>
-	<dt>Baba Adı   (*):</dt>
+	<dt>Baba Adı (*):</dt>
 	<dd><input class="required" type="text" name = "babaad"   id = "babaad" value="{@REQUEST.babaad}"     /></dd>
-	<dt>Ana Adı    (*):</dt>
+	<dt>Ana Adı (*):</dt>
 	<dd><input class="required" type="text" name = "anaad"    id = "anaad" value="{@REQUEST.anaad}"             /></dd>
-	<dt><label for="file">Resim:</label></dt>
+	<dt>Doğum Tarihi (*):</dt>
+	<dd>
+	  Gün
+	  <select name="dogumgun">
+	    <F3:repeat index="{@gun}" group="{@gunler}">
+	      <option value='{@gun}'>{@gun}</option>
+	    </F3:repeat>
+	  </select>
+	  Ay
+	  <select name="dogumay">
+	    <F3:repeat index="{@ay}" group="{@aylar}">
+	      <option value='{@ay}'>{@ay}</option>
+	    </F3:repeat>
+	  </select>
+	  Yıl
+	  <select name="dogumyil">
+	    <F3:repeat index="{@yil}" group="{@yillar}">
+	      <option value='{@yil}'>{@yil}</option>
+	    </F3:repeat>
+	  </select>
+	</dd>
+
+	<dt>Doğum Yeri - İl (*):</dt>
+	<dd>
+	  <select name="dogumil">
+	    <F3:repeat index="{@il}" group="{@iller}">
+	      <option value='{@il}'>{@il}</option>
+	    </F3:repeat>
+	  </select>
+	</dd>
+	<dt>Doğum Yeri - İlçe (*):</dt>
+	<dd><input class="required" type="text" name = "dogumilce" id = "dogumilce" value="{@REQUEST.dogumilce}" maxlength = "20"  /></dd>
+	<br />
+	<dt><label for="file">Resim (vesikalık resminiz):</label></dt>
 	<dd><input type="file" name="file" id="file"/></dd>
 	<dd><div class="info">
-	Resim 350 KB'ı geçmemeli,JPEG formatında olmalıdır.
+	Resim 500 KB'ı geçmemeli,JPEG formatında olmalıdır.
 	</div></dd>
 
 	</fieldset>
@@ -65,7 +97,7 @@
 		<dt>Üniversite  (*):</dt>
 		<dd><input class="required" type="text" name = "uni"    id = "uni" value="{@REQUEST.uni}"    			/></dd>
 		<dt>Yüksek Okul (*):</dt>
-		<dd><input class="required" type="text" name = "bolum"  id = "bolum" value="{@REQUEST.bolum}"   	    /></dd>
+		<dd><input class="required" type="text" name = "yokul"  id = "yokul" value="{@REQUEST.yokul}"   	    /></dd>
 	</fieldset>
 	<br/>
 	<fieldset>
@@ -84,6 +116,8 @@
 				</F3:repeat>
 		</select>
 	</dd>
+	<dt>İlçe (*):</dt>
+	<dd><input class="required" type="text" name = "isilce" id = "isilce" value="{@REQUEST.isilce}" maxlength = "20"  /></dd>
 	
 	</fieldset>
 	<br />
@@ -91,7 +125,7 @@
 	<fieldset>
 	  <legend>DİĞER BİLGİLER</legend>
 	<input type="hidden" name="tarih" id="tarih" value="{@REQUEST.tarih}">
-	  <strong>2009 yılında</strong> Ebelik Önlisans Programına kayıt yaptırdınız mı?<br/>
+	  <strong>2009 yılında</strong> Ebelik Lisans Tamamlama Programına ön kayıt yaptırdınız mı?<br/>
 	<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
