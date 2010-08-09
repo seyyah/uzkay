@@ -48,7 +48,7 @@ function yukle($hedef=NULL, $alan='file') {
 if (! F3::exists('error')) {
 	$kul = new Axon('kul');
 	$kul->copyFrom('REQUEST');
-	$kul->tarih = date("d-m-Y h:i");
+	$kul->tarih = date("d-m-Y H:i");
 
 	// artık elimizde temiz bir tc no var, resmi kaydedelim
 	// ilk kurulum sırasında bu <uploaddir> dizinini oluştur
