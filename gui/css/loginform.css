@@ -223,3 +223,7 @@ form dt {
 	margin-top: -1.5em;
 	margin-right: 6em;
 }
+
+#content span.radio .error {
+	display: inline-block;
+}
