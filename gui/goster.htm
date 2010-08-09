@@ -13,14 +13,19 @@ okuyunuz.  <strong>DİKKAT!  Bu ön kayıt formu Ebelik Lisans Tamamlama
   href="http://uzem.omu.edu.tr">http://uzem.omu.edu.tr</a> adresinden 
   yapılacaktır.</p>
 
+<F3:check if="{@error}">
+  <F3:true>
+    <br />
+    <p class="fail" style="color:red">{@error}</p>
+    <br />
+  </F3:true>
+</F3:check>
+
 <form name="login" action="kaydet" method="POST" id="login" enctype="multipart/form-data">
   <dl>
 	<fieldset>
 	  <legend>KİŞİSEL BİLGİLER</legend>
-	<F3:check if="{@error}">
- 	  <F3:true><p class="fail" style="color:red">{@error}</p></F3:true>
- 	</F3:check>
- 	<dt>TC Kimlik No (*):</dt>
+	<dt>TC Kimlik No (*):</dt>
  	<dd><input class="required" type="text" name="tc" id= "tc" value="{@REQUEST.tc}" maxlength = 11  /></dd>
  	<dt> Ad    (*):</dt>
  	<dd><input class="required" type="text" name="ad" id = "ad" value="{@REQUEST.ad}" maxlength = 40 /></dd>
