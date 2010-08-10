@@ -1,0 +1,53 @@
+<center>
+  <h1 >
+    EBELİK LİSANS TAMAMLAMA ÖN KAYIT BAŞVURU SORGULA
+  </h1>
+</center>
+<br/>
+
+<p>Ön kayıt başvuru çıktısını almak için, lütfen kayıt sırasında verdiğiniz 
+  bilgilere dayalı olarak aşağıda istenen <strong>tüm bilgileri</strong> 
+  doldurun.  <strong>DİKKAT!  Bu ön kayıt sorgulama formu Ebelik Lisans 
+  Tamamlama Programına YENİ başvuracak adaylar içindir.  Mevcut 
+  öğrencilerimizin kayıt yenilemeleri ile ilgili duyurular <a 
+  href="http://uzem.omu.edu.tr">http://uzem.omu.edu.tr</a> adresinden 
+  yapılacaktır.</p>
+
+<F3:check if="{@error}">
+  <F3:true>
+    <br />
+    <p class="fail" style="color:red">{@error}</p>
+    <br />
+  </F3:true>
+</F3:check>
+
+<br />
+<form name="login" action="sorguyap" method="POST" id="login" enctype="multipart/form-data">
+  <dl>
+	<fieldset>
+	<dt>TC Kimlik No (*):</dt>
+ 	<dd><input class="required" type="text" name="tc" id= "tc" value="{@REQUEST.tc}" maxlength = 11  /></dd>
+	<dt>Kızlık Soyadı (*):</dt>
+	<dd><input class="required" type="text" name = "kizliksoyad" id = "kizliksoyad" value="{@REQUEST.kizliksoyad}"  /></dd>
+	</fieldset>
+
+	<dd><!--void--></dd>
+	<br /><br />
+	<dt><label for="captcha">Onay Kodu (*):</label><dt>
+	<dd>
+	<div id="captcha">
+	  <input type="text" name="captcha" id="captcha" class="required"/>
+	<br />
+	  <img id="captcha" src="captcha" alt="Güvenlik Resmi" title="Güvenlik Resmi - Güncellemek için lütfen tıklayın"/>
+	</div>
+      </dd>
+      
+	<dd><div class="info">Resimdeki güvenlik kodunu girin.   Yenilemek 
+	    için resme tıklayın.</div></dd><br />
+ 		
+ 	 <dd><input class="required" type="submit" value="            Sorgula            " /></dd>
+	<br />
+	<br />
+	<strong>*</strong>&nbsp;&nbsp;doldurulması zorunlu alan.
+  </dl>
+</form>
