@@ -41,7 +41,7 @@ okuyunuz.  <strong>DİKKAT!  Bu ön kayıt formu Ebelik Lisans Tamamlama
 	<dt>Doğum Tarihi (*):</dt>
 	<dd>
 	  Gün
-	  <select name="dogumgun">
+	  <select name="dogumgun" class="required">
 	    <F3:repeat index='{@gun}' group='{@gunler}'>
 	      <F3:check if='{@gun==@REQUEST.dogumgun}'>
 		<F3:true><option value='{@gun}' selected>{@gun}</option></F3:true>
@@ -50,7 +50,7 @@ okuyunuz.  <strong>DİKKAT!  Bu ön kayıt formu Ebelik Lisans Tamamlama
 	    </F3:repeat>
 	  </select>
 	  Ay
-	  <select name="dogumay">
+	  <select name="dogumay" class="required">
 	    <F3:repeat index="{@ay}" group="{@aylar}">
 	      <F3:check if='{@ay==@REQUEST.dogumay}'>
 		<F3:true><option value='{@ay}' selected>{@ay}</option></F3:true>
@@ -59,7 +59,7 @@ okuyunuz.  <strong>DİKKAT!  Bu ön kayıt formu Ebelik Lisans Tamamlama
 	    </F3:repeat>
 	  </select>
 	  Yıl
-	  <select name="dogumyil">
+	  <select name="dogumyil" class="required">
 	    <F3:repeat index="{@yil}" group="{@yillar}">
 	      <F3:check if='{@yil==@REQUEST.dogumyil}'>
 		<F3:true><option value='{@yil}' selected>{@yil}</option></F3:true>
@@ -71,7 +71,7 @@ okuyunuz.  <strong>DİKKAT!  Bu ön kayıt formu Ebelik Lisans Tamamlama
 
 	<dt>Doğum Yeri - İl (*):</dt>
 	<dd>
-	  <select name="dogumil">
+	  <select name="dogumil" class="required">
 	    <F3:repeat index="{@il}" group="{@iller}">
 	      <F3:check if='{@il==@REQUEST.dogumil}'>
 		<F3:true><option value='{@il}' selected>{@il}</option></F3:true>
@@ -111,7 +111,7 @@ okuyunuz.  <strong>DİKKAT!  Bu ön kayıt formu Ebelik Lisans Tamamlama
 	<dd><input class="required" type="text" name = "evadres"  id = "evadres" value="{@REQUEST.evadres}"         /></dd>
 	<dt>İl 		   (*):</dt>
 	<dd>
-	  <select name="il">
+	  <select name="il" class="required">
 	    <F3:repeat index="{@il}" group="{@iller}">
 	      <F3:check if='{@il==@REQUEST.il}'>
 		<F3:true><option value='{@il}' selected>{@il}</option></F3:true>
@@ -144,7 +144,7 @@ okuyunuz.  <strong>DİKKAT!  Bu ön kayıt formu Ebelik Lisans Tamamlama
 	<dd><input class="required" type="text" name = "isadres" id = "isadres" value="{@REQUEST.isadres}"/></dd>
 	<dt>İl (*):</dt>
 	<dd>
-	  <select name="isil">
+	  <select name="isil" class="required">
 	    <F3:repeat index="{@il}" group="{@iller}">
 	      <F3:check if='{@il==@REQUEST.isil}'>
 		<F3:true><option value='{@il}' selected>{@il}</option></F3:true>
@@ -175,7 +175,7 @@ okuyunuz.  <strong>DİKKAT!  Bu ön kayıt formu Ebelik Lisans Tamamlama
 	<dt><label for="captcha">Onay Kodu (*):</label><dt>
         <dd>
 	<div id="captcha">
-	  <input type="text" name="captcha" id="captcha" />
+	  <input type="text" name="captcha" id="captcha" class="required"/>
 	  <img id="captcha" src="captcha" alt="Güvenlik Resmi" title="Güvenlik Resmi - Güncellemek için lütfen tıklayın"/>
 	</div>
       </dd>

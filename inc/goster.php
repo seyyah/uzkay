@@ -5,6 +5,7 @@ include 'lib/F1.php';
 // FIXME yavrum sen niye buradasın?
 function iller() {
 	return array(
+		'',
 		'Adana',
 		'Adıyaman',
 		'Afyonkarahisar',
@@ -90,15 +91,18 @@ function iller() {
 }
 
 function gunler() {
-	return range(1, 31);
+	$ret = range(1, 31); array_unshift($ret, '');
+	return $ret;
 }
 function aylar() {
-	return range(1, 12);
+	$ret = range(1, 12); array_unshift($ret, '');
+	return $ret;
 }
 function yillar() {
 	$busene = date('Y');
-	// sorarım isze insan kaç sene yaşar?
-	return range($busene, $busene - 100);
+	// sorarım size insan kaç sene yaşar?
+	$ret = range($busene, $busene - 100); array_unshift($ret, '');
+	return $ret;
 }
 
 F3::clear('SESSION.captcha');
