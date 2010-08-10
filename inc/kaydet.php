@@ -68,6 +68,8 @@ if (! F3::exists('error')) {
 		$kul->save();
 		// TODO: burada bir özet verelim
 		F3::set('message', 'Kaydınız başarıyla yapıldı.');
+		// tc no'yu oturuma gömelim ve oradan alalım
+		F3::set('SESSION.tc', $tc);
 		return F3::call(':ok');
 	}
 	// hatalı bir resim kaydı varsa çöp bırakmamaya çalış

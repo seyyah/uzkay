@@ -79,7 +79,8 @@ function pdf($kul) {
 	$pdf->Output();
 }
 
-$tc = F3::get('PARAMS.tc');
+//$tc = F3::get('PARAMS.tc');
+$tc = F3::get('SESSION.tc');
 if (preg_match('/^\d{11}$/', $tc)) {
 	$kul = new Axon('kul');
 	$kul->load("tc=$tc");

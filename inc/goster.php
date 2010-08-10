@@ -106,6 +106,7 @@ function yillar() {
 }
 
 F3::clear('SESSION.captcha');
+F3::clear('SESSION.tc');
 F3::call(':db');
 
 F3::set('gunler', gunler());
