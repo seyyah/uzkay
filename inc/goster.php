@@ -308,10 +308,10 @@ function aylar() {
 	$ret = range(1, 12); array_unshift($ret, '');
 	return $ret;
 }
-function yillar() {
+function yillar($enfazla=70) {
 	$busene = date('Y');
 	// sorarım size insan kaç sene yaşar?
-	$ret = range($busene, $busene - 100); array_unshift($ret, '');
+	$ret = range($busene, $busene - $enfazla); array_unshift($ret, '');
 	return $ret;
 }
 
