@@ -32,6 +32,7 @@ F3::sql(
 			'dogumyil varchar(4),'.
 			'dogumil varchar(32),'.
 			'dogumilce varchar(32),'.
+			'dogumulke varchar(64),'.
 			'ceptel varchar(10),'.
 			'evtel varchar(10),'.
 			'email varchar(100),'.

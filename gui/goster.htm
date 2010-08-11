@@ -82,12 +82,23 @@ okuyunuz.  <strong>DİKKAT!  Bu ön kayıt formu Ebelik Lisans Tamamlama
 	</dd>
 	<dt>Doğum Yeri - İlçe (*):</dt>
 	<dd><input class="required" type="text" name = "dogumilce" id = "dogumilce" value="{@REQUEST.dogumilce}" maxlength = "20"  /></dd>
+	<dd><div class="info">Yurt dışı doğumlular bu bölümde yurt dışı il girebilir.</div></dd>
+	<dt>Doğum Yeri - Ülke:</dt>
+	<dd>
+	  <select name="dogumulke" class="required">
+	    <F3:repeat index="{@ulke}" group="{@ulkeler}">
+	      <F3:check if='{@ulke==@REQUEST.dogumulke}'>
+		selected>{@ulke}</option></F3:true>
+		<F3:false><option value='{@ulke}'>{@ulke}</option></F3:false>
+	      </F3:check>
+	    </F3:repeat>
+	  </select>
+	</dd>
+	<dd><div class="info">Yurt dışı doğumlular bu bölümde ülke seçebilir.</div></dd>
 	<br />
 	<dt><label for="file">Resim (vesikalık resminiz):</label></dt>
 	<dd><input type="file" name="file" id="file"/></dd>
-	<dd><div class="info">
-	Resim 500 KB'ı geçmemeli,JPEG formatında olmalıdır.
-	</div></dd>
+	<dd><div class="info">Resim 500 KB'ı geçmemeli,JPEG formatında olmalıdır.</div></dd>
 
 	</fieldset>
 	<br/>
