@@ -40,7 +40,6 @@ function pdf($kul) {
 			'il'		=> 'İl',
 			'ilce'		=> 'İlçe',
 			'uni'		=> 'Üniversite',
-			'yokul'		=> 'Yüksek Okul',
 		),
 		'İş Bilgileri' => array(
 			'calismakurum'	=> 'Kurum',
@@ -57,11 +56,11 @@ function pdf($kul) {
 		$pdf->SetFont('dejavusans', 'B', 14);
 		$pdf->Cell(0, 5, $kesim, 0, 1, 'L');
 
-		$pdf->SetFont('dejavusans', '', 11);
+		$pdf->SetFont('dejavusans', '', 10);
 		foreach ($bilgi as $alan => $baslik) {
 			$deger = $kul->$alan;
-			$pdf->MultiCell(40, 1, $baslik . ':', 0, 'L', 0, 0, '25', '', true);
-			$pdf->MultiCell(100, 1, $deger,       0, 'L', 0, 0, '',   '', true);
+			$pdf->MultiCell(30, 1, $baslik . ':', 0, 'L', 0, 0, '25', '', true);
+			$pdf->MultiCell(180, 1, $deger,       0, 'L', 0, 0, '',   '', true);
 			$pdf->Ln(5);
 		}
 
