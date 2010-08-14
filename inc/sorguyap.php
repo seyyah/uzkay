@@ -7,11 +7,14 @@ function is_tc($tc) {
 	// Kaynak: is_tc(): http://www.kodaman.org/yazi/t-c-kimlik-no-algoritmasi
 	preg_replace(
 		'/([1-9]{1})([0-9]{1})([0-9]{1})([0-9]{1})([0-9]{1})([0-9]{1})([0-9]{1})([0-9]{1})([0-9]{1}).*$/e',
-		"eval('\$on=((((\\1+\\3+\\5+\\7+\\9)*7)-(\\2+\\4+\\6+\\8))%10); \$onbir=(\\1+\\2+\\3+\\4+\\5+\\6+\\7+\\8+\\9+\$on)%10; \$sonIki = \$on.\$onbir;')",
+		"eval('
+			\$on=((((\\1+\\3+\\5+\\7+\\9)*7)-(\\2+\\4+\\6+\\8))%10);
+			\$onbir=(\\1+\\2+\\3+\\4+\\5+\\6+\\7+\\8+\\9+\$on)%10;
+		')",
 		$tc
 	);
-
-	return (substr($tc, -2) == $sonIki);
+	// son iki haneyi (on ve onbirinci) kontrol et
+	return substr($tc, -2) == ($on < 0 ? 10 + $on : $on) . $onbir;
 }
 
 function strtolower_turkish($string) {
