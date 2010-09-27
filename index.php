@@ -1,7 +1,7 @@
 <?php
 
 include 'lib/F1.php';
-
+F3::set('template', 'goster');
 function render() { echo F3::serve('layout.htm'); }
 
 F3::config(".f3.ini");
